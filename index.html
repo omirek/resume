@@ -14,9 +14,6 @@
             color: black;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         header {
             background: black;
@@ -26,21 +23,34 @@
             width: 100%;
             text-align: center;
         }
-        section {
-            padding: 40px 20px;
-            max-width: 800px;
-            width: 80%;
-            text-align: left;
-            border-bottom: 2px solid lightgray;
+        .content {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            width: 100%;
         }
-        h2 {
-            border-bottom: 3px solid black;
+        section {
             display: flex;
-            align-items: center;
+            padding: 40px 20px;
+            background: #f8f8f8;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        section:nth-child(even) {
+            background: #eaeaea;
+        }
+        .section-title {
+            flex: 1;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
             gap: 10px;
+            text-align: right;
+            padding-right: 20px;
+        }
+        .section-content {
+            flex: 3;
         }
         ul {
             list-style: none;
@@ -84,54 +94,64 @@
         <p>Data Analyst</p>
     </header>
     
-    <section id="contact">
-        <h2><i class="ph ph-envelope"></i> Contact</h2>
-        <p><i class="ph ph-at"></i> Email: <a href="mailto:mirek.olech@gmail.com">mirek.olech@gmail.com</a></p>
-        <p><i class="ph ph-phone"></i> Phone: 661 536 796</p>
-        <p><i class="ph ph-map-pin"></i> Location: Pszczyna, Poland</p>
-    </section>
-
-    <section id="skills">
-        <h2><i class="ph ph-lightbulb"></i> Skills</h2>
-        <h3>Hard Skills</h3>
-        <ul>
-            <li><i class="ph ph-chart-bar"></i> Microsoft Excel (Proficient)</li>
-            <li><i class="ph ph-chart-line"></i> Power BI (Intermediate, M & DAX expertise)</li>
-            <li><i class="ph ph-chart-pie"></i> Tableau (Intermediate, Dashboard creation)</li>
-            <li><i class="ph ph-globe"></i> Fluent English</li>
-            <li><i class="ph ph-code"></i> Basic coding knowledge</li>
-            <li><i class="ph ph-book"></i> IBCS principles awareness</li>
-            <li><i class="ph ph-robot"></i> Generative AI tools knowledge</li>
-        </ul>
-        <h3>Soft Skills</h3>
-        <ul>
-            <li><i class="ph ph-brain"></i> Problem-solving</li>
-            <li><i class="ph ph-pencil"></i> Creativity</li>
-            <li><i class="ph ph-check-circle"></i> Strong work ethic</li>
-            <li><i class="ph ph-eye"></i> Attention to detail</li>
-            <li><i class="ph ph-rocket"></i> Fast learner</li>
-        </ul>
-    </section>
-
-    <section id="experience">
-        <h2><i class="ph ph-briefcase"></i> Experience</h2>
-        <p>Capgemini (2015 - Present)</p>
-        <ul>
-            <li><i class="ph ph-user"></i> Customer Advisor (2015-2016)</li>
-            <li><i class="ph ph-lock"></i> User Admin (2016-2018)</li>
-            <li><i class="ph ph-chart-bar"></i> Reporting Specialist (2018-Present) - Developed dashboards in Power BI & Tableau</li>
-        </ul>
-    </section>
+    <div class="content">
+        <section id="contact">
+            <div class="section-title"><i class="ph ph-envelope"></i> Contact</div>
+            <div class="section-content">
+                <p><i class="ph ph-at"></i> Email: <a href="mailto:mirek.olech@gmail.com">mirek.olech@gmail.com</a></p>
+                <p><i class="ph ph-phone"></i> Phone: 661 536 796</p>
+                <p><i class="ph ph-map-pin"></i> Location: Pszczyna, Poland</p>
+            </div>
+        </section>
     
-    <section id="career">
-        <h2><i class="ph ph-target"></i> Career Aspirations</h2>
-        <p>Passionate about transforming data into actionable insights. Seeking to deepen expertise in BI tools and analytics.</p>
-    </section>
-
+        <section id="skills">
+            <div class="section-title"><i class="ph ph-lightbulb"></i> Skills</div>
+            <div class="section-content">
+                <h3>Hard Skills</h3>
+                <ul>
+                    <li><i class="ph ph-chart-bar"></i> Microsoft Excel (Proficient)</li>
+                    <li><i class="ph ph-chart-line"></i> Power BI (Intermediate, M & DAX expertise)</li>
+                    <li><i class="ph ph-chart-pie"></i> Tableau (Intermediate, Dashboard creation)</li>
+                    <li><i class="ph ph-globe"></i> Fluent English</li>
+                    <li><i class="ph ph-code"></i> Basic coding knowledge</li>
+                    <li><i class="ph ph-book"></i> IBCS principles awareness</li>
+                    <li><i class="ph ph-robot"></i> Generative AI tools knowledge</li>
+                </ul>
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li><i class="ph ph-brain"></i> Problem-solving</li>
+                    <li><i class="ph ph-pencil"></i> Creativity</li>
+                    <li><i class="ph ph-check-circle"></i> Strong work ethic</li>
+                    <li><i class="ph ph-eye"></i> Attention to detail</li>
+                    <li><i class="ph ph-rocket"></i> Fast learner</li>
+                </ul>
+            </div>
+        </section>
+    
+        <section id="experience">
+            <div class="section-title"><i class="ph ph-briefcase"></i> Experience</div>
+            <div class="section-content">
+                <p>Capgemini (2015 - Present)</p>
+                <ul>
+                    <li><i class="ph ph-user"></i> Customer Advisor (2015-2016)</li>
+                    <li><i class="ph ph-lock"></i> User Admin (2016-2018)</li>
+                    <li><i class="ph ph-chart-bar"></i> Reporting Specialist (2018-Present) - Developed dashboards in Power BI & Tableau</li>
+                </ul>
+            </div>
+        </section>
+    
+        <section id="career">
+            <div class="section-title"><i class="ph ph-target"></i> Career Aspirations</div>
+            <div class="section-content">
+                <p>Passionate about transforming data into actionable insights. Seeking to deepen expertise in BI tools and analytics.</p>
+            </div>
+        </section>
+    </div>
+    
     <footer>
         <p>&copy; 2025 Mirosław Olech</p>
     </footer>
-
+    
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const sections = document.querySelectorAll("section");
