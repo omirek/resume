@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirosław Olech - Data Analyst</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: black;
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            border-bottom: 2px solid lightgray;
+        }
+        h2 {
+            border-bottom: 3px solid black;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        footer {
+            background: black;
+            color: white;
+            padding: 10px;
+        }
+        /* Animation */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mirosław Olech</h1>
+        <p>Data Analyst</p>
+    </header>
+    
+    <section id="contact">
+        <h2><i class="ph ph-envelope"></i> Contact</h2>
+        <p><i class="ph ph-at"></i> Email: <a href="mailto:mirek.olech@gmail.com">mirek.olech@gmail.com</a></p>
+        <p><i class="ph ph-phone"></i> Phone: 661 536 796</p>
+        <p><i class="ph ph-map-pin"></i> Location: Pszczyna, Poland</p>
+    </section>
+
+    <section id="skills">
+        <h2><i class="ph ph-lightbulb"></i> Skills</h2>
+        <h3>Hard Skills</h3>
+        <ul>
+            <li><i class="ph ph-microsoft-excel-logo"></i> Microsoft Excel (Proficient)</li>
+            <li><i class="ph ph-chart-bar"></i> Power BI (Intermediate, M & DAX expertise)</li>
+            <li><i class="ph ph-chart-line"></i> Tableau (Intermediate, Dashboard creation)</li>
+            <li><i class="ph ph-globe"></i> Fluent English</li>
+            <li><i class="ph ph-code"></i> Basic coding knowledge</li>
+            <li><i class="ph ph-chart-pie"></i> IBCS principles awareness</li>
+            <li><i class="ph ph-sparkle"></i> Generative AI tools knowledge</li>
+        </ul>
+        <h3>Soft Skills</h3>
+        <ul>
+            <li><i class="ph ph-brain"></i> Problem-solving</li>
+            <li><i class="ph ph-pencil"></i> Creativity</li>
+            <li><i class="ph ph-check"></i> Strong work ethic</li>
+            <li><i class="ph ph-eye"></i> Attention to detail</li>
+            <li><i class="ph ph-fast-forward"></i> Fast learner</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2><i class="ph ph-briefcase"></i> Experience</h2>
+        <p>Capgemini (2015 - Present)</p>
+        <ul>
+            <li><i class="ph ph-user"></i> Customer Advisor (2015-2016)</li>
+            <li><i class="ph ph-lock"></i> User Admin (2016-2018)</li>
+            <li><i class="ph ph-chart-bar"></i> Reporting Specialist (2018-Present) - Developed dashboards in Power BI & Tableau</li>
+        </ul>
+    </section>
+    
+    <section id="career">
+        <h2><i class="ph ph-target"></i> Career Aspirations</h2>
+        <p>Passionate about transforming data into actionable insights. Seeking to deepen expertise in BI tools and analytics.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mirosław Olech</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
