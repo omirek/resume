@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +18,10 @@
             color: black;
             margin: 0;
             padding: 0;
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.5;
         }
         header {
             background: black;
@@ -26,48 +34,49 @@
         .content {
             display: flex;
             flex-direction: column;
+            align-items: center;
             width: 100%;
         }
         section {
-            display: flex;
             padding: 40px 20px;
             background: #f8f8f8;
-            width: 100%;
             box-sizing: border-box;
-            align-items: flex-start;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
         }
         section:nth-child(even) {
             background: #eaeaea;
         }
         .section-title {
-            flex: 1;
             font-size: 1.5em;
             font-weight: bold;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-end;
-            gap: 10px;
-            text-align: right;
-            padding-right: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+            margin: 0 auto;
+            padding: 15px;
         }
         .section-content {
-            flex: 3;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
         }
         ul {
             list-style: none;
             padding: 0;
         }
         ul li {
-            margin: 15px 0;
-            display: flex;
+            margin: 10px 0;
+            display: block;
             align-items: center;
-            gap: 10px;
+            gap: 0px;
         }
         .subtext {
             font-size: 0.85em;
             color: #666;
             font-style: italic;
-            margin-top: 5px;
+            margin-top: 0px;
         }
         a {
             color: black;
@@ -83,16 +92,42 @@
         #contact p {
             margin: 8px 0;
         }
-        /* Enhanced Animations */
+
+        /* Full-width background for sections */
         section {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            width: 100%;
         }
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* Full-width background for body */
+        body {
+            background: #f8f8f8;
         }
+
+        .progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    height: 10px;
+    background-color: #4caf50;
+    width: 0;
+    border-radius: 5px;
+    animation: fillAnimation 2s ease-in-out forwards;
+}
+
+@keyframes fillAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -116,13 +151,20 @@
             <div class="section-content">
                 <h3>Hard Skills</h3>
                 <ul>
-                    <li><i class="ph ph-chart-bar"></i> Microsoft Excel <div class="subtext">Proficient</div></li>
-                    <li><i class="ph ph-chart-line"></i> Power BI <div class="subtext">Intermediate, M & DAX expertise</div></li>
-                    <li><i class="ph ph-chart-pie"></i> Tableau <div class="subtext">Intermediate, Dashboard creation</div></li>
-                    <li><i class="ph ph-globe"></i> Fluent English</li>
-                    <li><i class="ph ph-code"></i> Basic coding knowledge</li>
-                    <li><i class="ph ph-book"></i> IBCS principles awareness</li>
+                    <li><i class="ph ph-chart-bar"></i> Microsoft Excel <div class="subtext">Proficient</div>
+                    <div class="progress-bar" style="width: 100%;"><div class="progress-fill"></div></div></li>
+                    <li><i class="ph ph-chart-line"></i> Power BI <div class="subtext">Intermediate, M & DAX expertise</div>
+                    <div class="progress-bar" style="width: 75%;"><div class="progress-fill"></div></div></li>
+                    <li><i class="ph ph-chart-pie"></i> Tableau <div class="subtext">Intermediate, Dashboard creation</div>
+                    <div class="progress-bar" style="width: 70%;"><div class="progress-fill"></div></div></li>
+                    <li><i class="ph ph-globe"></i> Fluent English<div class="subtext">C2</div>
+                    <div class="progress-bar" style="width: 90%;"><div class="progress-fill"></div></div></li>
+                    <li><i class="ph ph-code"></i> Basic coding knowledge
+                    <div class="progress-bar" style="width: 30%;"><div class="progress-fill"></div></div></li>
+                    <li><i class="ph ph-book"></i> IBCS principles awareness
+                    <div class="progress-bar" style="width: 50%;"><div class="progress-fill"></div></div></li>
                     <li><i class="ph ph-robot"></i> Generative AI tools knowledge</li>
+                    <div class="progress-bar" style="width: 50%;"><div class="progress-fill"></div></div></li>
                 </ul>
                 <h3>Soft Skills</h3>
                 <ul>
@@ -138,11 +180,11 @@
         <section id="experience">
             <div class="section-title"><i class="ph ph-briefcase"></i> Experience</div>
             <div class="section-content">
-                <p>Capgemini <div class="subtext">2015 - Present</div></p>
+                <ul><li>Capgemini <div class="subtext">2015 - Present</div></li></ul>
                 <ul>
-                    <li><i class="ph ph-user"></i> Customer Advisor <div class="subtext">2015-2016</div></li>
-                    <li><i class="ph ph-lock"></i> User Admin <div class="subtext">2016-2018</div></li>
-                    <li><i class="ph ph-chart-bar"></i> Reporting Specialist <div class="subtext">2018-Present - Developed dashboards in Power BI & Tableau</div></li>
+                    <li><i class="ph ph-user"></i> Customer Advisor <div class="subtext">2015 - 2016</div></li>
+                    <li><i class="ph ph-lock"></i> User Admin <div class="subtext">2016 - 2018</div></li>
+                    <li><i class="ph ph-chart-bar"></i> Reporting Specialist <div class="subtext">2018 - Present - Developed dashboards in Power BI & Tableau</div></li>
                 </ul>
             </div>
         </section>
@@ -153,27 +195,23 @@
                 <p>Passionate about transforming data into actionable insights. Seeking to deepen expertise in BI tools and analytics.</p>
             </div>
         </section>
+
+<section id="trivia">
+    <div class="section-title"><i class="ph ph-star"></i> Trivia</div>
+    <div class="section-content">
+        <p>I appreciate you made it this far. In this case, you may as well go through some trivia about me.</p>
+        <ul>
+            <li>I am a happy husband and proud father of two.</li>
+            <li>In my free time I like to sing and translate songs. I also write my own songs.</li>
+            <li>I am a bookworm with a special taste for sci-fi and crime.</li>
+        </ul>
+    </div>
+</section>
+
     </div>
     
     <footer>
         <p>&copy; 2025 Mirosław Olech</p>
     </footer>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
 </body>
 </html>
